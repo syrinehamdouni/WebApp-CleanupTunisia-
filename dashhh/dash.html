@@ -1,0 +1,100 @@
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Attendance Dashboard | By Code Info</title>
+
+  <link rel="stylesheet" href="dass.css" />
+
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+  <script>
+    function supprimerLigne(element) {
+  var row = element.parentNode.parentNode; // Récupère la ligne parente (tr)
+  row.parentNode.removeChild(row); // Supprime la ligne du tableau
+}
+
+  </script>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a1 href="#" class="logo">
+          <img src="logo.png" >
+          <span class="nav-item">CleanUp</span>
+        </a1></li>
+        <li><a href="#">
+          <i class="fas fa-menorah"></i>
+          <span class="nav-item">Réclamations</span>
+        </a></li>
+          
+      
+        
+        
+        <li><a href="file:///C:/Users/admin/Desktop/profilsetting/prof.html">
+          <i class="fas fa-cog"></i>
+          <span class="nav-item">Paramétres</span>
+        </a></li>
+
+        <li><a href="file:///C:/Users/admin/Desktop/Login&Signin/login.html" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">sortir</span>
+        </a></li>
+      </ul>
+
+    </nav>
+
+
+    <section class="main">
+      <div class="main-top">
+        <h1>"كيما قالو ناس بكري : لي فاتك بالزين فوتو بالنظافة "</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      
+      <section class="attendance" width="10%" height="10%">
+        <div class="attendance-list">
+          <h1>liste des réclamations</h1>
+          <table class="table" id="myTable" >
+            <thead>
+              <tr>
+                <th >Photos</th>
+                <th>Adresse de réclamations</Address></th>
+                <th>ville</th>
+                <th>Municipalité</th>
+                <th>type</th>
+               
+                <th></th>
+                <th>Actions</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > 
+                  <img class="img" src="assets/image/pla.jpg" height="50%" width="50%">
+                </td>
+
+                <td>city ons</td>
+                <td>sfax</td>
+                <td>sakietezzite</td>
+                <td>plastique</td>
+                
+                <td><button><a href="voir.html">voir</a></button></td>
+                <td><button>Encours</button></td>
+                <td><button>Résolu</button></td>
+                <td><button onclick="supprimerLigne(this)">supprimer</button></td>
+                
+              </tr>
+             
+              
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </div>
+  <script src="yosr.js" ></script>
+</body>
+</html>

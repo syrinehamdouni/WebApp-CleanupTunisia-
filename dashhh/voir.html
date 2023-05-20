@@ -1,0 +1,84 @@
+<html>
+<head>
+  <style>
+  .map-container {
+    width: 100%;
+    height: 400px;
+  }
+</style>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+  <meta charset="UTF-8" />
+  <title>Attendance Dashboard | By Code Info</title>
+  <link rel="stylesheet" href="dass.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a1 href="#" class="logo">
+          <img src="logo.png" >
+          <span class="nav-item">CleanUp</span>
+        </a1></li>
+        <li><a href="#">
+          <i class="fas fa-menorah"></i>
+          <span class="nav-item">réclamations</span>
+        </a></li>
+          
+        <li><a href="file:///C:/Users/admin/Desktop/profilsetting/prof.html">
+          <i class="fas fa-cog"></i>
+          <span class="nav-item">Paramétres</span>
+        </a></li>
+
+        <li><a href="file:///C:/Users/admin/Desktop/Login&Signin/login.html" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">sortir</span>
+        </a></li>
+      </ul>
+
+    </nav>
+
+    <section class="main">
+      <div class="main-top">
+        <h1>"كيما قالو ناس بكري : لي فاتك بالزين فوتو بالنظافة "</h1>
+        <i class="fas fa-user-cog"></i>
+      </div>
+      
+      <section class="attendance" width="10%" height="10%">
+        <div class="attendance-list">
+        
+            <div style="text-align:center;">
+            <h3> Reclamation Numero : </h3><br><br>
+
+            <img class="img" src="pla.jpg" height="20%" width="20%"><br>
+            <ul>
+                <li>Type: </li>
+                <li>date: </li>
+                <li>heure: </li>
+                <li>Municipalité: </li>
+                <li>ville: </li>
+                <li>Email: </li>            
+            </ul>
+            </div>    
+        </div>
+        <div id="map"class="map-container">
+
+</div>
+      </section>
+          </section>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  // Créer une instance de carte et définir les coordonnées et le niveau de zoom
+  var map = L.map('map').setView([34.7393, 10.7603], 13);
+
+  // Ajouter une couche de tuiles OpenStreetMap à la carte
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+</script>
+
+</body>
+</html>

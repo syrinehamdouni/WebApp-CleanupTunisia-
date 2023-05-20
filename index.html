@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in & Sign-up Page</title>
+    <link rel="stylesheet" href="./Style.css">
+</head>
+<body>
+    <div class="container" id="content01">
+        <div class="img-slider">
+            <h2>Bienvenue sur CleanUp!</h2>
+            <p>Cette application est destinée aux employés municipaux qui cherchent à maintenir notre ville propore </p>
+                <img src="LOGO.png" alt="img" width="50%" height="50%">
+        </div>
+        <div class="content">
+            <h1>CleanUp</h1>
+            <p>Vous avez déjà un compte?  <a href="Signin.html" id="login">se connecter </a></p>
+            <form id="form">
+                <label for="name" id="nlabel">Name</label> <br>
+                <input type="text" id="fname" placeholder="nom utilisateur " autocomplete="off"> <br>
+                <label for="email" id="elabel">Email</label> <br>
+                <input type="email" id="eemail" placeholder="name@gmail.com" autocomplete="on"> <br>
+                <label for="NIF" id="elabell">numéro d'identification fiscale</label> <br>
+                <input type="text" id="Num" placeholder="NIF" autocomplete="off"> <br>
+ <div class="list-container">
+            <span>
+<select class="list-1" id="select1" onchange="updateSelect2()">
+  <option value="Ville">Ville</option>
+  <option value="Tunis">Tunis</option>
+  <option value="Sfax">Sfax</option>
+  <option value="Sousse">Sousse</option>
+    <option value="Bizerte">Bizerte</option>
+    <option value="Nabeul">Nabeul</option>
+    <option value="Kairouan">Kairouan</option>
+    <option value="Monastir">Monastir</option>
+    <option value="Hammamet">Hammamet</option>
+    <option value="Tataouine">Tataouine</option>
+    <option value="Gafsa">Gafsa</option>
+
+  </select></span>
+  <span>
+        <select class="list-2" id="select2">
+  <option value="Ville">Municipalité</option>
+  
+  </select></span>
+
+</div>
+               
+
+
+
+                <label for="password" id="plabel"> mot de passe</label><br>
+                <input type="password" name="password"  ><br>
+                <button type="submit"  onclick="UserRegister()" id="btn">s'inscrire </button>
+            </form>
+           
+        </div>
+    </div>
+    <div class="container display" id="content02">
+        <div class="img-slider">
+            <h2>Welcome to Flexicom</h2>
+            <p>we are a community together helping thousands of people out there who are struggling </p>
+                <img src="./Images/undraw_mobile_login_ikmv-removebg-preview.png" alt="img" class="sign-img">
+        </div>
+        <div class="content">
+            <h2>Get Started</h2>
+            <p>Don't have account ?  <a href="#" id="sign-up" >Sign up </a></p>
+            <form action="" id="form">
+                <label for="email" id="elabel">Email</label> <br>
+                <input type="email" id="eemail" placeholder="Lucifer@gmail.com" autocomplete="off"> <br>
+                <label for="NIF" id="elabell">Email</label> <br>
+                <input type="text" id="Num" placeholder="NIF" autocomplete="off"> <br>
+                <label for="password" id="plabel">Password</label> <br>
+                <input type="password" name="password" id="lpassword"> <br>
+                <button type="submit" onclick="SignIn()" id="btn1">Se connecter </button>
+            </form>
+            <div class="other">
+                <h3>Or Sign up with </h3>
+                <div class="icons">
+                    <img src="https://img.icons8.com/bubbles/50/000000/google-logo.png"/>  
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="data.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="server.js"></script>
+<script>
+    function updateSelect2() {
+    var select1 = document.getElementById("select1");
+    var select2 = document.getElementById("select2");
+    
+    var selectedValue = select1.value;
+    
+    if (selectedValue === "Tunis") {
+        select2.innerHTML = '<option value="Municipalité de Tunis">Municipalité de Tunis</option>' +
+                            '<option value="Municipalité de La Marsa">Municipalité de La Marsa</option>' +
+                            '<option value="Municipalité de Carthage">Municipalité de Carthage</option>' +
+                            '<option value="Municipalité de Sidi Bou Said">Municipalité de Sidi Bou Said</option>' +
+                            '<option value="Municipalité de La Goulette">Municipalité de La Goulette</option>' +
+                            '<option value="Municipalité de Le Kram">Municipalité de Le Kram</option>'+
+                            '<option value="Municipalité de Gammarth">Municipalité de Gammarth</option>'+
+                            '<option value="Municipalité de Le Bardo">Municipalité de Le Bardo</option>'+
+                            '<option value="Municipalité de Le Lac">Municipalité de Le Lac</option>'+
+                            '<option value="Municipalité de El Omrane">Municipalité de El Omrane</option>';
+    } else if (selectedValue === "Sfax") {
+        select2.innerHTML = '<option value="Municipalité de Sfax Ville">Municipalité de Sfax Ville  </option>' +
+                            '<option value="Municipalité de Sfax Ouest">Municipalité de Sfax Ouest </option>' +
+                            '<option value="Municipalité de Sfax Sud">Municipalité de Sfax Sud </option>' +
+                            '<option value="Municipalité de Sfax Est">Municipalité de Sfax Est</option>' +
+                            '<option value="Municipalité de Sfax Nord">Municipalité de Sfax Nord   </option>' +
+                            '<option value="Municipalité de Sfax Centre">Municipalité de Sfax Centre </option>' +
+                            '<option value="Municipalité de Sfax Medina">Municipalité de Sfax Medina    </option>'+
+                            '<option value="Municipalité de Sakiet Ezzit">Municipalité de Sakiet Ezzit    </option>'+
+                            '<option value="Municipalité de Sakiet Eddaier">Municipalité de Sakiet Eddaier     </option>'+
+                            '<option value="Municipalité de Sakiet Ezzit Nord">Municipalité de Sakiet Ezzit Nord     </option>'+
+                            '<option value="Municipalité de Sakiet Eddaier Nord">Municipalité de Sakiet Eddaier Nord    </option>';
+
+    } else if (selectedValue === "Sousse") {
+        select2.innerHTML = '<option value="Municipalité de Sousse Ville">Municipalité de Sousse Ville  </option>' +
+                            '<option value="Municipalité de Sousse Jawhara">Municipalité de Sousse Jawhara </option>' +
+                            '<option value="Municipalité de  Sousse Riadh">Municipalité de  Sousse Riadh </option>' +
+                            '<option value="Municipalité de Sousse Medina">Municipalité de Sousse Medina</option>' +
+                            '<option value="Municipalité de Sousse Corniche">Municipalité de Sousse Corniche   </option>' +
+                            '<option value="Municipalité de Sousse Khezama">Municipalité de Sousse Khezama </option>' +
+                            '<option value="Municipalité de Sousse Hached">Municipalité de Sousse Hached    </option>'+
+                            '<option value="Municipalité de Sousse Sidi Abdelhamid">Municipalité de Sousse Sidi Abdelhamid    </option>'+
+                            '<option value="Municipalité de  Sousse El Mouradi">Municipalité de  Sousse El Mouradi     </option>'+
+                            '<option value="Municipalité de Sousse Bouhsina">Municipalité de Sousse Bouhsina    </option>';
+                            
+                            
+
+   
+     } else if (selectedValue === "Bizerte") {
+        select2.innerHTML = '<option value="Municipalité de  Bizerte Ville">Municipalité de  Bizerte Ville  </option>' +
+                            '<option value="Municipalité de Menzel Bourguiba">Municipalité de Menzel Bourguiba </option>' +
+                            '<option value="Municipalité de   Ras Jebel">Municipalité de   Ras Jebel </option>' +
+                            '<option value="Municipalité de  Mateur">Municipalité de  Mateur</option>' +
+                            '<option value="Municipalité de  Joumine">Municipalité de  Joumine   </option>' +
+                            '<option value="Municipalité de Ghar El Melh">Municipalité de Ghar El Melh </option>' +
+                            '<option value="Municipalité de  Sejnane">Municipalité de  Sejnane    </option>'+
+                            '<option value="Municipalité de  Utique">Municipalité de  Utique   </option>'+
+                            '<option value="Municipalité de  El Alia">Municipalité de  El Alia     </option>'+
+                            '<option value="Municipalité de Sousse Bouhsina">Municipalité  Tinja    </option>';
+                            
+                            
+
+    }
+}
+</script>
+
+</body>
+</html>

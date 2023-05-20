@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in & Sign-up Page</title>
+    <link rel="stylesheet" href="./Style.css">
+</head>
+<body>
+    <div class="container" id="content02">
+        <div class="img-slider">
+            <h2>Bienvenue sur CleanUp!</h2>
+            <p>Cette application est destinée aux employés municipaux qui cherchent à maintenir notre ville propore </p>
+                <img src="LOGO.png" alt="img" width="50%" height="50%">
+        </div>
+        <div class="content">
+            <h1>CleanUp</h1>
+            <form id="form">
+                <label for="email" id="elabel">Email</label><br>
+                <input type="email" id="eemail" placeholder="name@gmail.com" autocomplete="on"> <br>
+                <label for="password" id="plabel">Password</label> <br>
+                <input type="password" name="password" id="lpassword"> <br>
+                 <button type="submit" onclick="SignIn()" id="btn1">Se connecter </button>
+            </form>
+           <p>
+            <a href="mdp.html">oublié mot de passe?</a></p>
+        </div>
+    </div>
+    <div class="container display" id="content02">
+        <div class="img-slider">
+            
+        </div>
+       
+    </div>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="data.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="server.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+   
